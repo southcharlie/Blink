@@ -1,10 +1,19 @@
-void blinkInit(){
-  pinMode(LED_BUILTIN,OUTPUT);
+#include "Arduino.h"
+class Blink{
+  public:
+  Blink(int a);
+  void on(int d);
+  void off(int d); 
+};
+Blink::Blink(int a){
+  pinMode(LED_BUILTIN, OUTPUT);
 }
-void LEDon(){
-  digitalWrite(LED_BUILTIN, HIGH);
+void Blink::on(int d){
+  digitalWrite(LED_BUILTIN,HIGH);
+  delay(d);
 }
-void LEDoff(){
-  digitalWrite(LED_BUILTIN, LOW);
+void Blink::off(int d){
+  digitalWrite(LED_BUILTIN,LOW);
+  delay(d);
 }
 
