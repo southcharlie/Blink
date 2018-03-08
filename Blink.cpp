@@ -1,12 +1,12 @@
-#include "Arduino.h"
 #include "Blink.h"
+Blink blink(D4);
 void setup(){
-  blinkInit();
+  Serial.begin(115200);
+  Serial.println("\nBlink Version 1.0 Your_First_Name Your_Last_Name");
 }
+
 void loop(){
-  LEDon();
-  delay(1000);
-  LEDoff();
-  delay(1000);
+  blink.on(500);
+  blink.off(300);
 }
 
