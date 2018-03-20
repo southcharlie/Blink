@@ -1,10 +1,10 @@
-const char* host = "api.thingspeak.com";
+const char* host = "maker.ifttt.com";
 
-String url = "/update?api_key=W6G4B4IA4GK88MUQ";  
+String url = "/trigger/hot_temp/with/key/cF_xd7YKXJGvKfT68r8f9b";  
 
 const int httpPort = 80;
 
-int interval = 60000;
+int interval = 5000;
 
 float r = 0;
 
@@ -57,7 +57,7 @@ String working() {
   r = sensors.getTempCByIndex(0); // do some magic here!
 
   Serial.print(sensors.getTempCByIndex(0));
-
+  url = "https://maker.ifttt.com/trigger/hot_temp/with/key/cF_xd7YKXJGvKfT68r8f9b/?value1="+String(r);
   return(String("field1=")+String(r));
 
 }
